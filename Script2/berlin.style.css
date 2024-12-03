@@ -1,0 +1,615 @@
+
+* {
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  
+/* Police globale */
+body {
+    font-family:"Jaro", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: rgb(0, 0, 0);
+}
+/* ------------------------------------------------------- */
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    background-color: black;
+    z-index: 50;
+    
+}
+
+header .logo img {
+    height: 40px;
+    padding-right: 30px;
+}
+
+.navigation {
+    display: flex;
+    gap: 20px;
+}
+
+header .navigation a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.navigation a:hover {
+    transform: scale(1.3);
+}
+
+header .contact img {
+    height: 40px;
+    border-radius:50%;
+    padding-left: 60px;
+}
+/* ------------------------------ */
+.menu-burger {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+    margin-left: 40px;
+    z-index: 100;
+}
+
+.menu-burger .barre {
+    width: 25px;
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+/* Affichage sur mobile */
+@media screen and (max-width: 768px) {
+    .navigation {
+        display: none;  /* Cacher le menu par défaut */
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #000000;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .navigation a {
+        display: block;
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .navigation a:hover {
+        background-color: #151515;
+    }
+
+    .menu-burger {
+        display: flex;
+        margin-left: 20px;
+        z-index: 20;
+    }
+
+    .navigation.active {
+        position: absolute;
+        display: block;  /* Afficher le menu lorsque le hamburger est cliqué */
+        z-index: 2000;
+    }
+}
+
+.navigation a {
+    transition: background-color 0.5s ease;
+}
+
+/* ------------------------------------------------------ */
+
+
+/* Section image de fond  */
+
+.imagefond {
+    position:relative;
+    overflow: hidden;
+    height:  100vh;
+    z-index: 1;
+}
+
+.imagefond img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%);
+    
+    
+}
+
+/* --------------------------------------- */
+.imagefond h1 {
+    position: absolute;
+    top: 10%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(3em, 8vw, 8em);
+    color: red;
+    animation: move-left 10s linear infinite;
+    letter-spacing: 5px;
+    text-align: center;
+    
+    
+}
+
+@keyframes move-left {
+    0% {
+      transform: translateX(100%); 
+    }
+    100% {
+      transform: translateX(-100%); 
+    }
+}
+
+/* ------------------------------------------- */
+
+/* Vidéo Film */
+.film {
+    padding: 2em;
+    box-shadow: 0 0 800px  #fdfdfdd3;
+    
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 500px;
+    border: 10px solid rgb(255, 103, 103);
+    border-radius: 10px;
+    /* box-shadow: 10px 10px 50px #f6ae9a8e;  */
+}
+
+/* ---------------------------------------- */
+
+/* Discographie */
+.discographie {
+    text-align: center;
+    margin-top: 20px;
+    padding: 1em;
+    
+    
+    
+}
+
+.discographie h2 {
+    background-color: #7c1b00;
+    font-size: 4em;
+    margin-bottom: 20px;
+    /* border: 2px solid rgb(255, 253, 253); */
+    border-radius: 40px;
+    max-width: 100%;
+    padding: 0.5em;
+    box-shadow: 0px 50px 100px 0px #5e1717;
+    animation: rotation 5s infinite linear;
+      transform-origin: center;
+}
+@keyframes rotation {
+    0% {
+      transform: rotateX(0deg);
+    }
+    100% {
+      transform: rotateX(360deg);
+    }
+  }
+
+/* ---------------------- */
+.discographie h3 {
+    font-size: 1.8em;   
+}
+/* ------------------- */
+.musique {
+    padding: 3em;
+    box-shadow: 0 0 50px 10px #ffffffb9;
+   
+}
+
+/* ------------------- */
+.discographie h4 {
+
+    font-size: 1.8em;
+}
+
+/* ------------------------- */
+
+/* boutons */
+.albums {
+    padding: 3em;
+    box-shadow: 0 0 30px 20px #ffffffb7;
+
+}
+.albums a {
+    display: inline-block;
+    width: 20%;
+    padding: 15px;
+    /* margin: 10px;
+   
+    /* background-color: rgba(255, 0, 0, 0.534); */
+    /* color: white; */
+    /* text-align: center; */
+    /* font-size: 1.5em; */
+    /* text-decoration:none; */
+    /* border-radius: 40px; */
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.albums .bouton1{
+    background-image: url(../images_videos/partoflife.PNG);
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    height: 30vh;
+    margin-bottom: 10px;
+    
+}
+
+.albums .bouton2{
+    background-image: url(../images_videos/7.PNG);
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    height: 30vh;
+    margin-bottom: 10px;
+}
+
+.albums .bouton3{
+    background-image: url(../images_videos/X.PNG);
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    height: 30vh;
+    margin-bottom: 10px;
+}
+
+.albums .bouton4{
+    background-image: url(../images_videos/berlincalling.PNG);
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    height: 30vh;
+    margin-bottom: 10px;
+}
+
+.topson {
+    padding: 10%;
+
+}
+@media (min-width: 768px) {
+    .albums {
+        display: flex;
+        flex-direction: row-reverse;    
+    }
+    .titre4 {
+        display: none;
+        
+    }
+}
+
+.wtftitre {
+    font-size: xx-large;
+    text-align: center;
+    box-shadow: 0 20px 100px #ffffff;
+}
+
+
+/* ---------------------------- */
+.albums a:hover {
+    background-color: #f6ae9a;
+    transform: scale(1.2);
+    box-shadow: 0 10px 30px rgba(255, 168, 168, 0.753); /* Ombre au survol */
+}
+/* ------------------------------------------- */
+
+
+/* Biographie */
+
+h5 {
+    background-color: #7c1b00;
+    font-size: 4em;
+    text-align: center;
+    border-radius: 40px;
+    max-width: 100%;
+    box-shadow: 0px 50px 100px #5e1717;
+    animation: rotation 5s infinite linear;
+      transform-origin: center;
+}
+
+@keyframes rotation {
+    0% {
+      transform: rotateX(0deg);
+    }
+    100% {
+      transform: rotateX(360deg);
+    }
+  }
+/* ------------------------------- */
+.biographie {
+    background: url('../images_videos/Portrait.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 1em 1em;
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    min-height: 100vh;
+    text-align: center;
+    position: relative;
+    color: white; 
+}
+
+.biographietitre {
+    box-shadow: 0 0 20px 40px #ffffffb9;
+    background-color: #000000db;
+    margin: 0;
+    padding: -50%;
+    margin-top: 0;
+    margin-bottom: -100px;
+
+}
+
+.textebio {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 2em;
+    text-align: center;
+}
+
+
+.textebio .soustitre {
+    
+    font-size: 2em;
+    font-weight: bold;
+    /* margin: 1.5em 0; */
+    color: white;
+}
+
+.textebio p {
+    text-align: justify;
+    font-size: 1.3em;
+    line-height: 1.6;
+    margin-bottom: 1em;
+    color: rgba(0, 0, 0, 0.819);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    h5 {
+        font-size: 4em;
+    }
+    .textebio {
+        font-size: 1em;
+    }
+    .textebio .soustitre {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    h5 {
+        font-size: 1.5em;
+    }
+    .textebio {
+        font-size: 0.8em;
+    }
+    .textebio .soustitre {
+        font-size: 1.5em;
+    }
+}
+
+/* --------------------------------- */
+/* réseaux sociaux */
+
+h6 {
+    font-size: 2em;
+    text-align: center;
+    border: 3px solid white;
+    padding: 1em;
+    margin: 20px;
+   
+}
+.reseaux-sociaux {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #000000; /* Contexte visuel */
+    color: white;
+    margin-bottom: 30vh;
+    justify-content: space-between;
+}
+
+
+
+.reseaux-sociaux a {
+    color: white;
+    padding: 10px 20px;
+    width: 120px;
+    height: 120px;
+    border: 1px solid white;
+    border-radius: 50%;
+    text-decoration: none;
+    text-align:center;
+    
+    transition: background-color 0.3s ease;
+}
+
+.reseaux-sociaux a:hover {
+    background-color: rgb(106, 0, 0);
+    color: white;
+    box-shadow: #ffffff9b;
+}
+
+.reseaux-sociaux .social-button1 {
+    margin: 10px 0;
+    background-color: green;
+}.reseaux-sociaux .social-button2 {
+    margin: 10px 0;
+    background: red;
+}
+.reseaux-sociaux .social-button3 {
+    margin: 10px 0;
+    background-color: darkorchid;
+}
+.reseaux-sociaux .social-button4 {
+    margin: 10px 0;
+    background-color: blue;
+}
+
+
+/* ------------------------------------------------ */
+/* Footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    padding: 20px;
+    font-size: 1em;
+}
+
+.footer a {
+    color: red;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer p {
+    margin-top: 10px;
+}
+
+/* ----------------------------------------------------- */
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        justify-content: center;
+    }    
+    header .navigation a {
+        font-size: 16px;
+        
+    }
+
+    .imagefond h1 {
+        font-size: 5em;
+        
+    }
+
+    .albums a {
+        width: 45%;
+        font-size: 1.2em;
+    }
+    h6 {
+        font-size: 1.5em;
+    }
+
+    .reseaux-sociaux {
+        flex-direction: column;
+        
+    }
+    .reseaux-sociaux a {
+        font-size: 1em;
+        
+    }
+
+    .reseaux-sociaux .social-button1 {
+        margin: 10px 0;
+    }
+    .reseaux-sociaux .social-button2 {
+        margin: 10px 0;
+    }
+    .reseaux-sociaux .social-button3 {
+        margin: 10px 0;
+    }
+    .reseaux-sociaux .social-button4 {
+        margin: 10px 0;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .discographie h2 {
+        font-size: 3em;
+    }
+    h5 {
+        font-size: 3em;
+    }
+    header {
+      align-items: center;
+      z-index: 1000;
+    }
+
+    header .navigation a {
+        font-size: 10px;  
+        
+    }
+    .imagefond {
+        max-height: 300px;
+    }
+    .imagefond h1 {
+        font-size: 2em;
+    }
+
+    .albums a {
+        width: 100%;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 370px) {
+    header {
+
+        max-width: 100%;
+        flex-direction: column;
+        background-color: transparent;
+    }    
+    header .navigation a {
+        font-size: 1em;
+        
+    }
+
+    .imagefond h1 {
+        font-size: 1em;
+        
+    }
+
+    .albums a {
+        max-width: 100%;
+        font-size: 0.5em;
+    }
+
+    .reseaux-sociaux {
+        flex-direction: column;
+    }
+
+    .reseaux-sociaux .social-button1 {
+        margin: 5px 0;
+    }
+    .reseaux-sociaux .social-button2 {
+        margin: 5px 0;
+    }
+    .reseaux-sociaux .social-button3 {
+        margin: 5px 0;
+    }
+    .reseaux-sociaux .social-button4 {
+        margin: 5px 0;
+    }
+
+}
